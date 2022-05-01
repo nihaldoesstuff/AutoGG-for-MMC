@@ -5,6 +5,9 @@ import gg.essential.api.EssentialAPI;
 import gg.essential.api.commands.DefaultHandler;
 
 public class Command extends gg.essential.api.commands.Command {
+
+    //This to add the command i.e /autogggmmc.
+
     public Command() {
         super("autoggmmc", true);
     }

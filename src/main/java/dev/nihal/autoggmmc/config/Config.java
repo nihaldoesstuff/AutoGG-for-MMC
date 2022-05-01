@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Config extends Vigilant {
 
-
+    //This is all the GUIs
     @Property(
             type = PropertyType.SWITCH, name = "AutoGGMMC",
             description = "Says GG after winning/losing a game on Minemen Club.",
@@ -28,10 +28,6 @@ public class Config extends Vigilant {
     )
     public static int ggMessage = 0;
 
-    public static String getGGmessage() {
-        return ggMessages [ggMessage];
-    }
-
     @Property(
             type = PropertyType.SWITCH, name = "Random Messagge",
             description = "Sends a random GG phrase",
@@ -48,9 +44,16 @@ public class Config extends Vigilant {
     )
     public static int GGDelay = 1;
 
+    //This is to get a random GG phrase from the given list.
+
     public static String getRandomGGmessage() {
         return ggMessages[ThreadLocalRandom.current().nextInt(ggMessages.length)];
     }
+
+    public static String getGGmessage() {
+        return ggMessages [ggMessage];
+    }
+
 
     public Config() {
         super(new File("autoggmmc.toml"), "AutoGGMMC");
